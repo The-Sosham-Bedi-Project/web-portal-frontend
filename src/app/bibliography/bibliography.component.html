@@ -1,0 +1,30 @@
+<div class="bibliography_header">
+    <span class="bibliography_header_text">Bibliography</span>
+</div>
+<div class="bibliography_parent">
+    <div *ngFor="let t of translations; let i = index">
+        <div class="translation_card" [routerLink]="['/translantion', t._id]">
+            <div class="translation_card_row">
+                <div class="sno_column">{{i}}.</div>
+                <div class="content_column">Translation Title: </div>
+                <div class="content_column">{{t.titleTranslation}}</div>
+                <div class="content_column">Original Title: </div>
+                <div class="content_column">{{t.titleOriginal}}</div>
+            </div>
+            <div class="translation_card_row">
+                <div class="sno_column"></div>
+                <div class="content_column">Translators: </div>
+                <div class="content_column">{{t.translators}}</div>
+                <div class="content_column">Authors: </div>
+                <div class="content_column">{{t.authors}}</div>
+            </div>
+            <div class="translation_card_row">
+                <div class="sno_column"></div>
+                <div class="content_column">Translated Into: </div>
+                <div class="content_column">{{t.translatedFrom}}</div>
+                <div class="content_column">Translated From: </div>
+                <div class="content_column">{{t.translatedInto}}</div>
+            </div>
+        </div>
+    </div>
+</div>
