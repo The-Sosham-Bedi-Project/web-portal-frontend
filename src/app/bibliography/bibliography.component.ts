@@ -9,6 +9,7 @@ import {Apollo, gql} from 'apollo-angular';
 export class BibliographyComponent implements OnInit {
 
    translations: any[] = [];
+   currentPage: number = 1;
 
    constructor(private apollo: Apollo) {}
 

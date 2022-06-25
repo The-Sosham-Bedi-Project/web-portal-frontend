@@ -23,9 +23,10 @@
 .translation_card {
     display: flex; 
     flex-direction: column;
-    padding: 5px;
+    padding: 15px;
     border-radius: 2px;
     margin-bottom: 5px;
+    border: 1px solid rgb(108,123,87);
 }
 
 .translation_card_row {

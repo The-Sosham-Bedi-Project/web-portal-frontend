@@ -1,11 +1,17 @@
+<div>
+    <img class="susham_bedi_art" src=".\assets\images\susham_bedi_art.jpg">
+</div>
 <div class="bibliography_header">
     <span class="bibliography_header_text">Bibliography</span>
 </div>
 <div class="bibliography_parent">
-    <div *ngFor="let t of translations; let i = index">
+    <div *ngFor="let i = index; let t of translations | paginate : { id: 'translations_pagination',
+    itemsPerPage: 25,
+    currentPage: currentPage,
+    totalItems: translations.length}">
         <div class="translation_card" [routerLink]="['/translantion', t._id]">
             <div class="translation_card_row">
-                <div class="sno_column">{{i}}.</div>
+                <div class="sno_column">{{(i+1) +((currentPage-1)*25)}}.</div>
                 <div class="content_column">Translation Title: </div>
                 <div class="content_column">{{t.titleTranslation}}</div>
                 <div class="content_column">Original Title: </div>
@@ -27,4 +33,6 @@
             </div>
         </div>
     </div>
+    <pagination-controls id="translations_pagination" (pageChange)="currentPage = $event">
+    </pagination-controls>
 </div>
