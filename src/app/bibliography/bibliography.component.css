@@ -10,33 +10,40 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background: rgb(108,123,87);
+    margin: 20px 0px;
 }
 
 .bibliography_header_text{
-    padding: 80px;
+    padding: 20px;
     font-size: 45px;
-    color: rgb(108,123,87);
-    font-weight: bold;
+    color: white;
+    font-family: 'EB Garamond';
 }
 
 .bibliography_parent{
     display: flex; 
     flex-direction: column; 
     align-items: center;
+    background-color: rgb(220, 224, 215);
+    padding-top: 20px;
 }
 
 .translation_card {
     display: flex; 
     flex-direction: column;
     padding: 5px;
-    border: 1px solid rgb(108,123,87);
-    border-radius: 2px;
-    margin-bottom: 5px;
+    border: transparent;
+    border-radius: 10px;
+    margin-bottom: 20px;
     cursor: pointer;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 }
 
 .translation_card:hover {
-    background: rgb(220, 224, 215);;
+    box-shadow: 4px 4px rgb(203, 207, 199);
 }
 
 .translation_card_row {
@@ -47,9 +54,58 @@
 .sno_column {
     width: 2vw;
     padding: 2px;
+    color: rgb(108,123,87);
 }
-
 .content_column {
-    width: 15vw;
+    display: flex;
+    flex-direction: row;
+}
+.content_column_header {
+    font-weight: 700;
+    width: 20vw;
     padding: 2px;
 }
+.content_column_value {
+    width: 20vw;
+    padding: 2px;
+}
+.translation-pagination ::ng-deep .ngx-pagination .current {
+    background:  rgb(108,123,87);
+  }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+    .translation_card_row {
+        display: flex; 
+        flex-direction: column;
+    }
+    .sno_column {
+        width: 80vw;
+        padding: 2px;
+    }
+    
+    .content_column {
+        display: flex;
+        flex-direction: row;
+    }
+    .content_column_header {
+        width: 40vw;
+        padding: 2px;
+    }
+    .content_column_value {
+        width: 40vw;
+        padding: 2px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) { }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) { }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) { }
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) { }

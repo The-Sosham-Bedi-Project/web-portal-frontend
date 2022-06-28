@@ -2,37 +2,51 @@
     <img class="susham_bedi_art" src=".\assets\images\susham_bedi_art.jpg">
 </div>
 <div class="bibliography_header">
-    <span class="bibliography_header_text">Bibliography</span>
+    <span class="bibliography_header_text heading_font">Bibliography</span>
 </div>
 <div class="bibliography_parent">
     <div *ngFor="let i = index; let t of translations | paginate : { id: 'translations_pagination',
     itemsPerPage: 25,
     currentPage: currentPage,
     totalItems: translations.length}">
-        <div class="translation_card" [routerLink]="['/translantion', t._id]">
+        <div class="translation_card base_font" [routerLink]="['/translantion', t._id]">
             <div class="translation_card_row">
                 <div class="sno_column">{{(i+1) +((currentPage-1)*25)}}.</div>
-                <div class="content_column">Translation Title: </div>
-                <div class="content_column">{{t.titleTranslation}}</div>
-                <div class="content_column">Original Title: </div>
-                <div class="content_column">{{t.titleOriginal}}</div>
             </div>
             <div class="translation_card_row">
-                <div class="sno_column"></div>
-                <div class="content_column">Translators: </div>
-                <div class="content_column">{{t.translators}}</div>
-                <div class="content_column">Authors: </div>
-                <div class="content_column">{{t.authors}}</div>
+                <div class="content_column">
+                    <div class="content_column_header">Translation Title: </div>
+                    <div class="content_column_value">{{t.titleTranslation}}</div>
+                </div>
+                <div class="content_column">
+                    <div class="content_column_header">Original Title: </div>
+                    <div class="content_column_value">{{t.titleOriginal}}</div>
+                </div>
             </div>
             <div class="translation_card_row">
-                <div class="sno_column"></div>
-                <div class="content_column">Translated Into: </div>
-                <div class="content_column">{{t.translatedFrom}}</div>
-                <div class="content_column">Translated From: </div>
-                <div class="content_column">{{t.translatedInto}}</div>
+                  
+                <div class="content_column">
+                    <div class="content_column_header">Translators: </div>
+                    <div class="content_column_value">{{t.translators}}</div>
+                </div>
+                <div class="content_column">
+                    <div class="content_column_header">Authors: </div>
+                    <div class="content_column_value">{{t.authors}}</div>
+                </div>
+            </div>
+            <div class="translation_card_row">
+                  
+                <div class="content_column">
+                    <div class="content_column_header">Translated Into: </div>
+                    <div class="content_column_value">{{t.translatedFrom}}</div>
+                </div>
+                <div class="content_column">
+                    <div class="content_column_header">Translated From: </div>
+                    <div class="content_column_value">{{t.translatedInto}}</div>
+                </div>
             </div>
         </div>
     </div>
-    <pagination-controls id="translations_pagination" (pageChange)="currentPage = $event">
+    <pagination-controls class="translation-pagination" id="translations_pagination" (pageChange)="currentPage = $event">
     </pagination-controls>
 </div>
