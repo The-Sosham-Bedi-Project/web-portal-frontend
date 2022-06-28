@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Apollo, gql} from 'apollo-angular';
+import { Apollo, gql } from 'apollo-angular';
 
 @Component({
   selector: 'app-bibliography',
@@ -8,10 +8,10 @@ import {Apollo, gql} from 'apollo-angular';
 })
 export class BibliographyComponent implements OnInit {
 
-   translations: any[] = [];
-   currentPage: number = 1;
+  translations: any[] = [];
+  currentPage: number = 1;
 
-   constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
     this.apollo
@@ -19,11 +19,13 @@ export class BibliographyComponent implements OnInit {
         query: gql`{
         translations {
           _id
-          
+    
+          imgUrl
+    
           titleTranslation
           translators
           translatedInto
-          
+    
           titleOriginal
           authors
           translatedFrom

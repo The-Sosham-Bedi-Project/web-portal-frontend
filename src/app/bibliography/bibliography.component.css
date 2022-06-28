@@ -32,7 +32,7 @@
 .translation_card {
     display: flex; 
     flex-direction: column;
-    padding: 5px;
+    padding: 25px;
     border: transparent;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -63,11 +63,11 @@
 .content_column_header {
     font-weight: 700;
     width: 20vw;
-    padding: 2px;
+    padding: 2px 16px;
 }
 .content_column_value {
     width: 20vw;
-    padding: 2px;
+    padding: 2px 16px;
 }
 .translation-pagination ::ng-deep .ngx-pagination .current {
     background:  rgb(108,123,87);
@@ -89,12 +89,10 @@
         flex-direction: row;
     }
     .content_column_header {
-        width: 40vw;
-        padding: 2px;
+        width: 32vw;
     }
     .content_column_value {
-        width: 40vw;
-        padding: 2px;
+        width: 32vw;
     }
 }
 
