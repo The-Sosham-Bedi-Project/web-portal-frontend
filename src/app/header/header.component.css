@@ -65,6 +65,7 @@
         font-size: 1.3rem;
         font-family: serif;
         cursor: pointer;
+        margin-left: 25px;
     }
 
     .page_title:hover {

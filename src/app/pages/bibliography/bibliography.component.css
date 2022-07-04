@@ -2,6 +2,30 @@
     width: 100%;
 }
 
+.project_author_intro {
+    position: relative;
+    color: white;
+    font-family: 'EB Garamond';
+    font-size: 24px;
+}
+
+.project_author_intro_text {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 30%;
+    width: 40vw;
+}
+
+.author_intro_button {
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 5px;
+    width: fit-content;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
 .bibliography_header {
     width: 100%;
     position: relative;

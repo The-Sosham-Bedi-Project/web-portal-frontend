@@ -3,15 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BibliographyComponent } from './bibliography/bibliography.component';
+import { BibliographyComponent } from './pages/bibliography/bibliography.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TranslationComponent } from './translation/translation.component';
+import { TranslationComponent } from './pages/translation/translation.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ApolloModule, APOLLO_OPTIONS} from 'apollo-angular';
 import {HttpLink} from 'apollo-angular/http';
 import {InMemoryCache} from '@apollo/client/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { AboutAuthorComponent } from './pages/about-author/about-author.component';
+import { ThemesComponent } from './pages/themes/themes.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     BibliographyComponent,
-    TranslationComponent
+    TranslationComponent,
+    AboutAuthorComponent,
+    ThemesComponent
   ],
   imports: [
     BrowserModule,

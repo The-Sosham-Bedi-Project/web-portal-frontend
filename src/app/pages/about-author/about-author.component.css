@@ -1,0 +1,30 @@
+.about_header{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_header_text{
+    padding: 80px;
+    font-size: 45px;
+    color: rgb(108,123,87);
+    font-weight: bold;
+}
+
+.about_parent{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.about_card {
+    display: flex; 
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(108,123,87);
+}
