@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Apollo, gql } from 'apollo-angular';
 
 @Component({
   selector: 'app-themes',
@@ -6,10 +7,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./themes.component.css']
 })
 export class ThemesComponent implements OnInit {
+  translations: any[] = [];
 
-  constructor() { }
+  constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
+    this.apollo
+      .watchQuery({
+        query: gql`{
+          themes {
+            _id
+            
+            themeName
+            
+            imageUrl
+            
+            translations {
+              id
+            }
+          }
+        }
+        `,
+      })
+      .valueChanges.subscribe((result: any) => {
+        this.translations = result?.data?.themes;
+      });
   }
 
 }

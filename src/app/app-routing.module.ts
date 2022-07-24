@@ -4,12 +4,14 @@ import { AboutAuthorComponent } from './pages/about-author/about-author.componen
 import { BibliographyComponent } from './pages/bibliography/bibliography.component';
 import { ThemesComponent } from './pages/themes/themes.component';
 import { TranslationComponent } from './pages/translation/translation.component';
+import { ThemePageComponent } from './pages/themes/theme-page/theme-page.component';
 
 const routes: Routes = [
   { path: '', component: BibliographyComponent, pathMatch: 'full' },
   { path: 'translantion/:id', component: TranslationComponent },
-  { path: 'themes', component: ThemesComponent },
+  { path: 'collections', component: ThemesComponent },
   { path: 'about', component: AboutAuthorComponent },
+  { path: 'colllection/:id', component: ThemePageComponent }
 ];
 
 @NgModule({

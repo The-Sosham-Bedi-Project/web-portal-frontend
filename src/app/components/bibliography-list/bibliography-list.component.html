@@ -1,0 +1,91 @@
+<div class="bibliography_parent">
+    <div *ngIf="translations"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div *ngFor="let i = index; let t of translations | paginate : { id: 'translations_pagination',
+    itemsPerPage: 25,
+    currentPage: currentPage,
+    totalItems: translations.length}">
+            <div class="translation_card base_font" [routerLink]="['/translantion', t._id]">
+                <div class="translation_card_row">
+                    <div class="sno_column">{{(i+1) +((currentPage-1)*25)}}.</div>
+                </div>
+                <div class="translation_card_row" style="justify-content: center; align-items: center;">
+                    <div class="translation_card_cover_col"
+                        style="position: relative; height: fit-content; width: fit-content; overflow: hidden;">
+                        <img [src]="'./assets/images/'+((i%3)+1)+'.jpg'" style="width: 320px;">
+                        <div class="book_title" style="width: 200px;
+                    height: 200px;
+                    position: absolute;
+                    transform: translate(-50%,50%);
+                    left: 50%;
+                    top: 0px;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    text-align: center;
+                    font-family: 'EB Garamond';
+                    font-size: 36px;">
+                            {{t.titleTranslation?t.titleTranslation:t.titleOriginal}}</div>
+                        <div class="book_title" style="width: 200px;
+                    position: absolute;
+                    transform: translate(-50%,50%);
+                    left: 50%;
+                    bottom: 20%;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    text-align: center;
+                    font-size: 24px;
+                    font-family: 'EB Garamond'">
+                            {{t.authors?t.authors: ''}}
+                            <span style="font-size: 16px;">
+                                <br>
+                                <em>{{t.translators?'Translated By':''}}</em>
+                                <br>
+                                {{t.translators?t.translators:''}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="translation_card_info_col">
+                        <div class="translation_card_info_row">
+                            <div class="content_column">
+                                <h1 class="content_column_header">
+                                    {{t.titleTranslation?t.titleTranslation:t.titleOriginal}}</h1>
+                            </div>
+                            <div class="content_column" *ngIf="t.titleTranslation">
+                                <div class="content_column_header">Translation Title: </div>
+                                <div class="content_column_value">{{t.titleTranslation}}</div>
+                            </div>
+                            <div class="content_column" *ngIf="t.translators">
+                                <div class="content_column_header">Translators: </div>
+                                <div class="content_column_value">{{t.translators}}</div>
+                            </div>
+                            <div class="content_column" *ngIf="t.translatedInto">
+                                <div class="content_column_header">Translated Into: </div>
+                                <div class="content_column_value">{{t.translatedInto}}</div>
+                            </div>
+                            <hr style="border: solid 1px rgb(220, 224, 215);">
+                            <div class="content_column" *ngIf="t.titleOriginal">
+                                <div class="content_column_header">Original Title: </div>
+                                <div class="content_column_value">{{t.titleOriginal}}</div>
+                            </div>
+                            <div class="content_column" *ngIf="t.authors">
+                                <div class="content_column_header">Authors: </div>
+                                <div class="content_column_value">{{t.authors}}</div>
+                            </div>
+                            <div class="content_column" *ngIf="t.translatedFrom">
+                                <div class="content_column_header">Translated From: </div>
+                                <div class="content_column_value">{{t.translatedFrom}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls class="translation-pagination" id="translations_pagination"
+            (pageChange)="currentPage = $event">
+        </pagination-controls>
+    </div>
+
+    <div *ngIf="!translations">
+        No matching Items
+    </div>
+</div>

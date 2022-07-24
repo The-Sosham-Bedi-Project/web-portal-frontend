@@ -9,8 +9,6 @@ import { Apollo, gql } from 'apollo-angular';
 export class BibliographyComponent implements OnInit {
 
   translations: any[] = [];
-  currentPage: number = 1;
-  searchString: string = '';
 
   constructor(private apollo: Apollo) { }
 
@@ -39,11 +37,11 @@ export class BibliographyComponent implements OnInit {
       });
   }
 
-  search() :void {
+  search(searchString: any) :void {
     this.apollo
       .watchQuery({
         query: gql`{
-          search(searchString: "${this.searchString}") {
+          search(searchString: "${searchString}") {
             _id
             
             imgUrl

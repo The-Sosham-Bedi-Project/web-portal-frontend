@@ -1,0 +1,84 @@
+.bibliography_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(220, 224, 215);
+    padding: 20px 0px;
+}
+
+.translation_card {
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border: transparent;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.translation_card:hover {
+    box-shadow: 4px 4px rgb(203, 207, 199);
+}
+
+.translation_card_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.sno_column {
+    width: 2vw;
+    padding: 2px;
+    color: rgb(108, 123, 87);
+}
+
+.content_column {
+    display: flex;
+    flex-direction: row;
+}
+
+.content_column_header {
+    font-weight: 700;
+    width: 20vw;
+    padding: 2px 16px;
+}
+
+.content_column_value {
+    width: 20vw;
+    padding: 2px 16px;
+}
+
+.translation-pagination ::ng-deep .ngx-pagination .current {
+    background: rgb(108, 123, 87);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .translation_card_row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sno_column {
+        width: 80vw;
+        padding: 2px;
+    }
+
+    .content_column {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .content_column_header {
+        width: 32vw;
+    }
+
+    .content_column_value {
+        width: 32vw;
+    }
+}

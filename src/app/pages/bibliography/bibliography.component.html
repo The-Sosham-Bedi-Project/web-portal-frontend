@@ -1,101 +1,15 @@
 <div class="project_author_intro">
-    <img class="susham_bedi_art" src=".\assets\images\susham_bedi_art.jpg">
+    <img class="main_art" src=".\assets\images\susham_bedi_art.jpg">
     <div class="project_author_intro_text">
-        <h1 style="font-size: 55px;">The <em>Susham Bedi</em> Project</h1>
-        Through this project, we aim to document the compelling words of authors from as many languauges as possible; especially languages from India.
-        <div class="author_intro_button"> About Susham Bedi </div>
+        <h1 style="font-size: 55px; margin-top: 0px;">Found in <em>Translation</em> Portal</h1>
+        Through this project, we aim to document the compelling words of authors from as many languauges as possible;
+        especially languages from India.
+        <div class="author_intro_button" routerLink="/about"> Read More </div>
     </div>
 </div>
 <div class="bibliography_header">
     <span class="bibliography_header_text heading_font">Bibliography</span>
 </div>
-<div class="bibliography_parent">
-    <form id="form" role="search" class="searchbar">
-        <input class="searchinput" type="search" id="query" name="q" placeholder="Search..."
-            aria-label="Search through site content" [(ngModel)]="searchString">
-        <button (click)="search()" class="searchbutton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                viewBox="0 0 16 16">
-                <path
-                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-        </button>
-    </form>
-    <div *ngIf="translations">
-        <div *ngFor="let i = index; let t of translations | paginate : { id: 'translations_pagination',
-    itemsPerPage: 25,
-    currentPage: currentPage,
-    totalItems: translations.length}">
-            <div class="translation_card base_font" [routerLink]="['/translantion', t._id]">
-                <div class="translation_card_row">
-                    <div class="sno_column">{{(i+1) +((currentPage-1)*25)}}.</div>
-                </div>
-                <div class="translation_card_row" style="justify-content: center; align-items: center;">
-                    <div class="translation_card_cover_col"
-                        style="position: relative; height: fit-content; width: fit-content; overflow: hidden;">
-                        <img [src]="'./assets/images/'+((i%3)+1)+'.jpg'" style="width: 160px;">
-                        <div class="book_title" style="width: 100px;
-                    height: 100px;
-                    position: absolute;
-                    transform: translate(-50%,50%);
-                    left: 50%;
-                    top: 0px;
-                    overflow: hidden;
-                    word-wrap: break-word;
-                    text-align: center;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-weight: bold;">
-                            {{t.titleTranslation?t.titleTranslation:t.titleOriginal}}</div>
-                        <div class="book_title" style="width: 100px;
-                    position: absolute;
-                    transform: translate(-50%,50%);
-                    left: 50%;
-                    top: 160px;
-                    overflow: hidden;
-                    word-wrap: break-word;
-                    text-align: center;
-                    font-size: small;">
-                            {{t.authors?t.authors:t.translators}}</div>
-                    </div>
-                    <div class="translation_card_info_col">
-                        <div class="translation_card_info_row">
-                            <div class="content_column">
-                                <div class="content_column_header">Translation Title: </div>
-                                <div class="content_column_value">{{t.titleTranslation}}</div>
-                            </div>
-                            <div class="content_column">
-                                <div class="content_column_header">Translators: </div>
-                                <div class="content_column_value">{{t.translators}}</div>
-                            </div>
-                            <div class="content_column">
-                                <div class="content_column_header">Translated Into: </div>
-                                <div class="content_column_value">{{t.translatedFrom}}</div>
-                            </div>
-                            <hr style="border: solid 1px rgb(220, 224, 215);">
-                            <div class="content_column">
-                                <div class="content_column_header">Original Title: </div>
-                                <div class="content_column_value">{{t.titleOriginal}}</div>
-                            </div>
-                            <div class="content_column">
-                                <div class="content_column_header">Authors: </div>
-                                <div class="content_column_value">{{t.authors}}</div>
-                            </div>
-                            <div class="content_column">
-                                <div class="content_column_header">Translated From: </div>
-                                <div class="content_column_value">{{t.translatedInto}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <pagination-controls class="translation-pagination" id="translations_pagination"
-            (pageChange)="currentPage = $event">
-        </pagination-controls>
-    </div>
-
-    <div *ngIf="!translations">
-        No matching Items
-    </div>
-
-</div>
+<app-searchbar (search)="search($event)"></app-searchbar>
+<app-bibliography-list [translations] = "translations"></app-bibliography-list>
+<app-contact></app-contact>

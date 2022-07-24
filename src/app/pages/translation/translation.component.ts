@@ -33,7 +33,7 @@ export class TranslationComponent implements OnInit {
             translatedInto
             type
             yearOfPublicationOriginal
-            YearOfPublicationTranslation
+            yearOfPublicationTranslation
             publisherOriginal
             publisherTranslation
             ebook
