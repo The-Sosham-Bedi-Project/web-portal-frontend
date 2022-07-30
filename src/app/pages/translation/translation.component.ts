@@ -45,7 +45,7 @@ export class TranslationComponent implements OnInit {
       })
       .valueChanges.subscribe((result: any) => {
         this.t = result?.data?.translationById;
-        console.log(this.t);
+        // console.log(this.t);
       });
   }
 

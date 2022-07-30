@@ -21,10 +21,6 @@ export class ThemesComponent implements OnInit {
             themeName
             
             imageUrl
-            
-            translations {
-              id
-            }
           }
         }
         `,

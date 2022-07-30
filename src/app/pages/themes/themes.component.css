@@ -23,6 +23,8 @@
     background-color: rgb(220, 224, 215);
     padding-top: 20px;
     min-height: 70vh;
+    flex-wrap: wrap;
+    margin-right: 20px;
 }
 
 .themes_card {

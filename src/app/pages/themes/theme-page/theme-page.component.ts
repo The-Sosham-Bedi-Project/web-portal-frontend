@@ -40,7 +40,7 @@ export class ThemePageComponent implements OnInit {
       .valueChanges.subscribe((result: any) => {
         this.t = result?.data?.themeById;
         this.trasnlationIds = this.t.translations.map((value: { id: any; }) => value.id);
-        console.log(JSON.stringify(this.trasnlationIds))
+        //console.log(JSON.stringify(this.trasnlationIds))
         this.apollo
       .watchQuery({
         query: gql`{

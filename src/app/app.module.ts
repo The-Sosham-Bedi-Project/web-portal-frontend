@@ -17,9 +17,12 @@ import { ThemesComponent } from './pages/themes/themes.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ThemePageComponent } from './pages/themes/theme-page/theme-page.component';
-import { BibliographyCardComponent } from './components/bibliography-card/bibliography-card.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { BibliographyListComponent } from './components/bibliography-list/bibliography-list.component';
+import { FeaturedCollectionComponent } from './components/featured-collection/featured-collection.component';
+import { ResultsComponent } from './pages/results/results.component';
+import { AnnouncementsComponent } from './components/announcements/announcements.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -33,9 +36,11 @@ import { BibliographyListComponent } from './components/bibliography-list/biblio
     FooterComponent,
     ContactComponent,
     ThemePageComponent,
-    BibliographyCardComponent,
     SearchbarComponent,
-    BibliographyListComponent
+    BibliographyListComponent,
+    FeaturedCollectionComponent,
+    ResultsComponent,
+    AnnouncementsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { BibliographyListComponent } from './components/bibliography-list/biblio
     HttpClientModule,
     ApolloModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

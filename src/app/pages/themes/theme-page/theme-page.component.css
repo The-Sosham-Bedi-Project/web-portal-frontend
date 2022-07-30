@@ -11,9 +11,15 @@
 
 .theme_header_text {
     padding: 20px;
-    font-size: 45px;
+    font-size: 2.5rem;
     color: white;
     font-family: 'EB Garamond';
+    display: flex;
+    text-align: center;
+}
+
+.theme_header_art {
+    height:40vh;
 }
 
 .name_header{
@@ -27,7 +33,7 @@
 
 .name_header_text{
     padding: 80px;
-    font-size: 64px;
+    font-size: 3rem;
     color: black;
     font-family: 'EB Garamond';
 }
@@ -40,7 +46,7 @@
     position: relative;
     color: white;
     font-family: 'EB Garamond';
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .project_author_intro_text {
@@ -73,7 +79,7 @@
 
 .bibliography_header_text {
     padding: 20px;
-    font-size: 45px;
+    font-size: 2.5rem;
     color: white;
     font-family: 'EB Garamond';
 }
@@ -98,7 +104,7 @@
     cursor: pointer;
     background-color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     overflow: hidden;
 }
 
@@ -194,13 +200,25 @@
     .content_column_value {
         width: 32vw;
     }
+
+    .theme_header_art {
+        height:40vw;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .theme_header_art {
+        height:40vw;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .theme_header_art {
+        height:40vh;
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}

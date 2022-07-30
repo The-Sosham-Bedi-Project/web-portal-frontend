@@ -5,13 +5,15 @@ import { BibliographyComponent } from './pages/bibliography/bibliography.compone
 import { ThemesComponent } from './pages/themes/themes.component';
 import { TranslationComponent } from './pages/translation/translation.component';
 import { ThemePageComponent } from './pages/themes/theme-page/theme-page.component';
+import { ResultsComponent } from './pages/results/results.component';
 
 const routes: Routes = [
   { path: '', component: BibliographyComponent, pathMatch: 'full' },
   { path: 'translantion/:id', component: TranslationComponent },
   { path: 'collections', component: ThemesComponent },
   { path: 'about', component: AboutAuthorComponent },
-  { path: 'colllection/:id', component: ThemePageComponent }
+  { path: 'colllection/:id', component: ThemePageComponent },
+  { path: 'results/:search', component: ResultsComponent }
 ];
 
 @NgModule({

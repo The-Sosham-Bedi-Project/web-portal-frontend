@@ -5,9 +5,9 @@
     <div class="translation_card">
         <div class="translation_card_row" *ngIf="t.titleTranslation">
             <div class="translation_card_cover_col"
-                        style="position: relative; height: fit-content; width: fit-content; overflow: hidden; align-items: center; justify-content: center;">
-                        <img [src]="'./assets/images/1.jpg'" style="width: 320px;">
-                        <div class="book_title" style="width: 200px;
+                style="position: relative; height: fit-content; width: fit-content; overflow: hidden; align-items: center; justify-content: center;">
+                <img [src]="'./assets/images/1.jpg'" style="width: 320px;">
+                <div class="book_title" style="width: 200px;
                     height: 200px;
                     position: absolute;
                     transform: translate(-50%,50%);
@@ -18,8 +18,8 @@
                     text-align: center;
                     font-family: 'EB Garamond';
                     font-size: 36px;">
-                            {{t.titleTranslation?t.titleTranslation:t.titleOriginal}}</div>
-                        <div class="book_title" style="width: 200px;
+                    {{t.titleTranslation?t.titleTranslation:t.titleOriginal}}</div>
+                <div class="book_title" style="width: 200px;
                     position: absolute;
                     transform: translate(-50%,50%);
                     left: 50%;
@@ -29,82 +29,102 @@
                     text-align: center;
                     font-size: 24px;
                     font-family: 'EB Garamond'">
-                            {{t.authors?t.authors: ''}}
-                            <span style="font-size: 16px;">
-                                <br>
-                                <em>{{t.translators?'Translated By':''}}</em>
-                                <br>
-                                {{t.translators?t.translators:''}}
-                            </span>
-                        </div>
-                    </div>
+                    {{t.authors?t.authors: ''}}
+                    <span style="font-size: 16px;">
+                        <br>
+                        <em>{{t.translators?'Translated By':''}}</em>
+                        <br>
+                        {{t.translators?t.translators:''}}
+                    </span>
+                </div>
+            </div>
         </div>
-    </div>    
+    </div>
     <div class="translation_card">
-        
+
         <div class="translation_card_row" *ngIf="t.titleTranslation">
             <div class="content_column content_header">Translation Title: </div>
-            <div class="content_column">{{t.titleTranslation}}</div>
+            <div class="content_column link_format">
+                <a [href]="'https://www.google.com/search?q='+t.titleTranslation" target="_blank">
+                    <span class="page_title">
+                        {{t.titleTranslation}}
+                    </span>
+                </a>
+            </div>
         </div>
         <div class="translation_card_row" *ngIf="t.titleOriginal">
             <div class="content_column content_header">Original Title: </div>
-            <div class="content_column">{{t.titleOriginal}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.titleOriginal]">{{t.titleOriginal}}
+            </div>
         </div>
         <div class="translation_card_row" *ngIf="t.translators">
             <div class="content_column content_header">Translators: </div>
-            <div class="content_column">{{t.translators}}</div>  
+            <div class="content_column  link_format" [routerLink]="['/results', t.translators]">{{t.translators}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.authors">
             <div class="content_column content_header">Authors: </div>
-            <div class="content_column">{{t.authors}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.authors]">{{t.authors}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.translatedInto">
             <div class="content_column content_header">Translated Into: </div>
-            <div class="content_column">{{t.translatedInto}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.translatedInto]">{{t.translatedInto}}
+            </div>
         </div>
         <div class="translation_card_row" *ngIf="t.translatedFrom">
             <div class="content_column content_header">Translated From: </div>
-            <div class="content_column">{{t.translatedFrom}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.translatedFrom]">{{t.translatedFrom}}
+            </div>
         </div>
         <div class="translation_card_row" *ngIf="t.editors">
             <div class="content_column content_header">Editors: </div>
-            <div class="content_column">{{t.editors}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.editors]">{{t.editors}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.genre">
             <div class="content_column content_header">Genre: </div>
-            <div class="content_column">{{t.genre}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.genre]">{{t.genre}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.type">
             <div class="content_column content_header">Type: </div>
-            <div class="content_column">{{t.type}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.type]">{{t.type}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.singleOrAnthology">
             <div class="content_column content_header">Single/Anthology: </div>
-            <div class="content_column">{{t.singleOrAnthology}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.singleOrAnthology]">
+                {{t.singleOrAnthology}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.publisherOriginal">
             <div class="content_column content_header">Plublisher for Original: </div>
-            <div class="content_column">{{t.publisherOriginal}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.publisherOriginal]">
+                {{t.publisherOriginal}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.publisherTranslation">
             <div class="content_column content_header">Plublisher for Translation: </div>
-            <div class="content_column">{{t.publisherTranslation}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.publisherTranslation]">
+                {{t.publisherTranslation}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.yearOfPublicationOriginal">
             <div class="content_column content_header">Year of Publication for Original: </div>
-            <div class="content_column">{{t.yearOfPublicationOriginal}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.yearOfPublicationOriginal]">
+                {{t.yearOfPublicationOriginal}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.yearOfPublicationTranslation">
             <div class="content_column content_header">Year of Publication for Translation: </div>
-            <div class="content_column">{{t.yearOfPublicationTranslation}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.yearOfPublicationTranslation]">
+                {{t.yearOfPublicationTranslation}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.ebook">
             <div class="content_column content_header">Ebook: </div>
-            <div class="content_column">{{t.ebook}}</div>
+            <div class="content_column  link_format" [routerLink]="['/results', t.ebook]">{{t.ebook}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.isbn">
             <div class="content_column content_header">ISBN: </div>
-            <div class="content_column">{{t.isbn}}</div>
+            <div class="content_column  link_format">
+                <a [href]="'https://www.google.com/search?q='+t.isbn" target="_blank">
+                    <span class="page_title">
+                        {{t.isbn}}
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -13,28 +13,28 @@ export class BibliographyComponent implements OnInit {
   constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
-    this.apollo
-      .watchQuery({
-        query: gql`{
-        translations {
-          _id
+    // this.apollo
+    //   .watchQuery({
+    //     query: gql`{
+    //     translations {
+    //       _id
     
-          imgUrl
+    //       imgUrl
     
-          titleTranslation
-          translators
-          translatedInto
+    //       titleTranslation
+    //       translators
+    //       translatedInto
     
-          titleOriginal
-          authors
-          translatedFrom
-        }
-      }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        this.translations = result?.data?.translations;
-      });
+    //       titleOriginal
+    //       authors
+    //       translatedFrom
+    //     }
+    //   }
+    //     `,
+    //   })
+    //   .valueChanges.subscribe((result: any) => {
+    //     this.translations = result?.data?.translations;
+    //   });
   }
 
   search(searchString: any) :void {

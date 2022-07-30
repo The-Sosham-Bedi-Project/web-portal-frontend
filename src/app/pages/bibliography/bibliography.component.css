@@ -6,15 +6,12 @@
     position: relative;
     color: white;
     font-family: 'EB Garamond';
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
-.project_author_intro_text {
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 30%;
-    width: 40vw;
+.project_name_text {
+    font-size: 2.5rem;
+    margin-top: 0px;
 }
 
 .author_intro_button {
@@ -34,7 +31,7 @@
     align-items: center;
     justify-content: center;
     background: rgb(108, 123, 87);
-    margin: 20px 0px 30px 0;
+    margin: 20px 0px;
 }
 
 .bibliography_header_text {
@@ -42,13 +39,45 @@
     font-size: 45px;
     color: white;
     font-family: 'EB Garamond';
+    display: flex;
+    text-align: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .project_author_intro_text {
+        position: relative;
+        background: rgb(228, 228, 90);
+        padding: 20px;
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .project_author_intro_text {
+        position: relative;
+        background: rgb(228, 228, 90);
+        padding: 20px;
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .project_author_intro_text {
+        background: none;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 30%;
+        width: 40vw;
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
