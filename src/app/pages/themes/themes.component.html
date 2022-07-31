@@ -1,7 +1,7 @@
 <div class="themes_header">
     <span class="themes_header_text">Collections</span>
 </div>
-<div class="themes_parent">
+<div class="themes_parent" *ngIf="translations.length">
     <div *ngFor="let t of translations" class="themes_card" [routerLink]="['/colllection', t._id]">
         <div class="themes_title">{{t.themeName}}</div>
         <img [src]="t.imageUrl" style="height: 200px;">

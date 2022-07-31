@@ -58,7 +58,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'http://localhost:3000/graphql',
+            uri: 'https://web-portal-service.herokuapp.com/graphql',
           }),
         };
       },
