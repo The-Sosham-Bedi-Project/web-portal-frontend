@@ -5,24 +5,63 @@
         </a>
     </div>
     <div class="page_title_div">
+        <div class="mobile page_title" (click)="showMobileMenu = true">
+            &#8226;&#8226;&#8226;
+        </div>
         <a href="#contact">
-            <span class="page_title">
+            <span class="desktop page_title">
                 Contact
             </span>
         </a>
-        <span class="page_title" routerLink="/about">
+        <span class="desktop page_title" routerLink="/about">
             About
         </span>
-        <span class="page_title" routerLink="/collections">
+        <span class="desktop page_title" routerLink="/collections">
             Collections
         </span>
-        <span class="page_title" routerLink="/">
+        <span class="desktop page_title" routerLink="/">
             Home
         </span>
         <a href="https://translation.ashoka.edu.in/" target="_blank">
-            <span class="page_title">
+            <span class="desktop page_title">
                 Ashoka Centre for Translation
             </span>
         </a>
     </div>
+</div>
+
+<div *ngIf="showMobileMenu" class="mobile_menu">
+    <div class="page_title_div" style="width:100%;">
+        <div class="page_title" style="margin-top: 60px; margin-right: 58px; margin-left: auto;"
+            (click)="showMobileMenu = false">
+            &#10006;
+        </div>
+    </div>
+    <div style="display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    transform: translateY(-50%);
+    margin-top: 60%;
+    margin-left: 20px;">
+        <a href="#contact">
+            <span class="page_title" style="padding: 5px;">
+                Contact
+            </span>
+        </a>
+        <span class="page_title" style="padding: 5px;" routerLink="/about">
+            About
+        </span>
+        <span class="page_title" style="padding: 5px;" routerLink="/collections">
+            Collections
+        </span>
+        <span class="page_title" style="padding: 5px;" routerLink="/">
+            Home
+        </span>
+        <a href="https://translation.ashoka.edu.in/" target="_blank">
+            <span class="page_title" style="padding: 5px;">
+                Ashoka Centre for Translation
+            </span>
+        </a>
+    </div>
+
 </div>

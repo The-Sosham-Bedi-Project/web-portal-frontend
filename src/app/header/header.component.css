@@ -7,26 +7,51 @@ a {
     max-width: 360px;
 }
 
+.page_title_div {
+    width: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.mobile_menu {
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: white;
+}
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .header {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none !important;
     }
 
     .act_logo_div {
         width: fit-content;
-    }
-
-    .page_title_div {
-        width: 70%;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
     }
 
     .page_title {
@@ -46,31 +71,22 @@ a {
     }
 
     .act_logo {
-        width: 80vw;
+        width: 50vw;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .header {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none !important;
     }
 
     .act_logo_div {
         width: fit-content;
-    }
-
-    .page_title_div {
-        width: 70%;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
     }
 
     .page_title {
@@ -91,7 +107,7 @@ a {
     }
 
     .act_logo {
-        width: 80vw;
+        width: 50vw;
     }
 }
 
@@ -100,24 +116,16 @@ a {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .header {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 20px 50px;
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block !important;
     }
 
     .act_logo_div {
         width: 30%;
-    }
-
-    .page_title_div {
-        width: 70%;
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-start;
-        justify-content: flex-start;
     }
 
     .page_title {
