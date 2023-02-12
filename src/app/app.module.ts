@@ -23,6 +23,8 @@ import { FeaturedCollectionComponent } from './components/featured-collection/fe
 import { ResultsComponent } from './pages/results/results.component';
 import { AnnouncementsComponent } from './components/announcements/announcements.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {environment} from '../environments/environment';
+
 
 
 @NgModule({
@@ -58,7 +60,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'https://web-portal-service.herokuapp.com/graphql',
+            uri: environment.serverUrl,
           }),
         };
       },
