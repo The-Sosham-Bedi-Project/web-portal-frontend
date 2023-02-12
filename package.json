@@ -8,10 +8,10 @@
     "ng": "ng",
     "start": "node server.js",
     "start:dev": "ng serve",
-    "build": "npm run build --configuration production",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "npm run build --configuration production"
+    "postinstall": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
