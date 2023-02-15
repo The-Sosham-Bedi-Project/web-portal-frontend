@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: "http://localhost:3000/graphql"
+  serverUrl: "http://ec2-15-207-115-77.ap-south-1.compute.amazonaws.com/api/"
 };
 
 /*
