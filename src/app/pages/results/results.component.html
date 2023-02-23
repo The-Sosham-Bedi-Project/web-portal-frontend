@@ -2,4 +2,5 @@
     <span class="bibliography_header_text heading_font">Results for <em>{{searchString}}</em></span>
 </div>
 <app-searchbar (search)="search($event)"></app-searchbar>
+<app-advance-search></app-advance-search>
 <app-bibliography-list *ngIf="translations.length" [translations] = "translations"></app-bibliography-list>

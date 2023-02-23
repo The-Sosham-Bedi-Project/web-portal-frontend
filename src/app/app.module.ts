@@ -24,6 +24,7 @@ import { ResultsComponent } from './pages/results/results.component';
 import { AnnouncementsComponent } from './components/announcements/announcements.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {environment} from '../environments/environment';
+import { AdvanceSearchComponent } from './components/advance-search/advance-search.component';
 
 
 
@@ -43,6 +44,7 @@ import {environment} from '../environments/environment';
     FeaturedCollectionComponent,
     ResultsComponent,
     AnnouncementsComponent,
+    AdvanceSearchComponent,
   ],
   imports: [
     BrowserModule,
