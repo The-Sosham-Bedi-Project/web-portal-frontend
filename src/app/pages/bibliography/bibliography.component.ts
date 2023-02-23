@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
+import { SearchService } from 'src/app/services/search.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-bibliography',
@@ -10,56 +12,13 @@ export class BibliographyComponent implements OnInit {
 
   translations: any[] = [];
 
-  constructor(private apollo: Apollo) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // this.apollo
-    //   .watchQuery({
-    //     query: gql`{
-    //     translations {
-    //       _id
-    
-    //       imgUrl
-    
-    //       titleTranslation
-    //       translators
-    //       translatedInto
-    
-    //       titleOriginal
-    //       authors
-    //       translatedFrom
-    //     }
-    //   }
-    //     `,
-    //   })
-    //   .valueChanges.subscribe((result: any) => {
-    //     this.translations = result?.data?.translations;
-    //   });
   }
 
   search(searchString: any) :void {
-    this.apollo
-      .watchQuery({
-        query: gql`{
-          search(searchString: "${searchString}") {
-            _id
-            
-            imgUrl
-            
-            titleTranslation
-            translators
-            translatedInto
-            
-            titleOriginal
-            authors
-            translatedFrom
-          }
-        }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        this.translations = result?.data?.search;
-      });
+    this.router.navigate(['/results', searchString]);
   }
 
 }

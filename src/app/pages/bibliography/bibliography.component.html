@@ -9,14 +9,14 @@
         <div class="author_intro_button" routerLink="/about"> Read More </div>
     </div>
 </div>
-<app-announcements></app-announcements>
-<div class="bibliography_header">
-    <span class="bibliography_header_text heading_font">Featured Collection</span>
-</div>
-<app-featured-collection></app-featured-collection>
 <div class="bibliography_header">
     <span class="bibliography_header_text heading_font">Bibliography</span>
 </div>
 <app-searchbar (search)="search($event)"></app-searchbar>
 <app-bibliography-list *ngIf="translations.length" [translations] = "translations"></app-bibliography-list>
+<app-announcements></app-announcements>
+<!-- <div class="bibliography_header">
+    <span class="bibliography_header_text heading_font">Featured Collection</span>
+</div> -->
+<!-- <app-featured-collection></app-featured-collection> -->
 <app-contact></app-contact>

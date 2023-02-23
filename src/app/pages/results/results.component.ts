@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 import { map } from 'rxjs';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-results',
@@ -9,37 +10,25 @@ import { map } from 'rxjs';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  search: string = '';
+  searchString: string = '';
   translations: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private apollo: Apollo) { }
+  constructor(private activatedRoute: ActivatedRoute, private searchService: SearchService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.pipe(map(p => p['search'])).subscribe(
-      (search:string) => { this.search = search }
+      (search: string) => {
+        this.searchString = search;
+        this.searchService.search(search)
+          .valueChanges.subscribe((result: any) => {
+            this.translations = result?.data?.search;
+          });
+      }
     );
-    this.apollo
-      .watchQuery({
-        query: gql`{
-          search(searchString: "${this.search}") {
-            _id
-            
-            imgUrl
-            
-            titleTranslation
-            translators
-            translatedInto
-            
-            titleOriginal
-            authors
-            translatedFrom
-          }
-        }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        this.translations = result?.data?.search;
-      });
+  }
+
+  search(searchString: any) :void {
+    this.router.navigate(['/results', searchString]);
   }
 
 }
