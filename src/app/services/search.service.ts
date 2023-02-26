@@ -6,13 +6,31 @@ import { Apollo, gql } from 'apollo-angular';
 })
 export class SearchService {
 
+  public translations =[];
+
   constructor(private apollo: Apollo) { }
 
-  search(searchString: any) {
-    return this.apollo
+  getSearchInput(searchInput: any) {
+    let input = "";
+    if (searchInput.searchString) {
+      input += `searchString:"${searchInput.searchString}"`
+    }
+    if (searchInput.translatedFrom) {
+      input += `translatedFrom:"${searchInput.translatedFrom}"`
+    }
+    if (searchInput.translatedInto) {
+      input += `translatedInto:"${searchInput.translatedInto}"`
+    }
+    return input;
+  }
+
+  search(searchInput: any) {
+    const input = this.getSearchInput(searchInput);
+    if (input !== "") return this.apollo
       .watchQuery({
         query: gql`{
-          search(searchString: "${searchString}") {
+          search(
+            searchInput: {${input}}) {
             _id
             
             imgUrl
@@ -28,5 +46,6 @@ export class SearchService {
         }
         `,
       })
-  }
+      else return;
+  } 
 }

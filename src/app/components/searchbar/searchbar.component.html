@@ -1,7 +1,12 @@
 <div class="bibliography_parent">
-    <form id="form" role="search" class="searchbar" title="Type a keyword based on what you're searching for: author, source language, translator, year of publication, etc.">
-        <input class="searchinput" type="search" id="query" name="q" placeholder="Search for Translations..."
-            aria-label="Search through site content" [(ngModel)]="searchString">
+    <form id="form" role="search" class="searchbar">
+        <input id="query" name="q" placeholder="Keyword" aria-label="Search through site content"
+            [(ngModel)]="searchString" title="Type a keyword based on what you're searching for: author, source language, translator, year of publication, etc.">
+        <input id="query_from" name="r" placeholder="Translated From" aria-label="Search through site content"
+            [(ngModel)]="translatedFrom">
+
+        <input id="query_to" name="s" placeholder="Translated Into" aria-label="Search through site content"
+            [(ngModel)]="translatedInto">
         <button (click)="emitSearch()" class="searchbutton">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">

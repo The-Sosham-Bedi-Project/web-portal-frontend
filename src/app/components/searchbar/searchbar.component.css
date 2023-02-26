@@ -14,8 +14,15 @@
     border-radius: 5px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     margin: 20px 0px;
+    padding: 10px;
+}
+
+input {
+    padding: 5px;
 }
 
 .searchinput {

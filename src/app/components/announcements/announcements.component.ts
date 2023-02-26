@@ -13,8 +13,8 @@ export interface Announcement {
 export class AnnouncementsComponent implements OnInit {
 
   announcements = [
-   'Translation Portal is now live',
-     'Checkout the featured collection for this month'
+     'Checkout the our repository of translations!',
+     'The State of Indian Translations'
    ];
 
    current = 0;

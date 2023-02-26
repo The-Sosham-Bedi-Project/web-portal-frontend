@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'collections', component: ThemesComponent },
   { path: 'about', component: AboutAuthorComponent },
   { path: 'colllection/:id', component: ThemePageComponent },
-  { path: 'results/:search', component: ResultsComponent }
+  { path: 'results', component: ResultsComponent }
 ];
 
 @NgModule({

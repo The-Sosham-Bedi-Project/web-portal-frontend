@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 import { map, Observable } from 'rxjs';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-translation',
@@ -13,7 +14,7 @@ export class TranslationComponent implements OnInit {
   t: any = {};
   id: string = 'kjjhjhjh';
 
-  constructor(private activatedRoute: ActivatedRoute, private apollo: Apollo) { }
+  constructor(private activatedRoute: ActivatedRoute, private apollo: Apollo, private searchService: SearchService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.pipe(map(p => p['id'])).subscribe(
@@ -48,5 +49,10 @@ export class TranslationComponent implements OnInit {
         // console.log(this.t);
       });
   }
-
+  search(searchString: string) {
+    this.searchService.search({searchString:searchString})?.valueChanges.subscribe((result: any) => {
+      this.searchService.translations = result?.data?.search;
+    });
+    this.router.navigate(['results']);
+  }
 }

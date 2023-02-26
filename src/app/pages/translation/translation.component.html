@@ -54,67 +54,67 @@
         </div>
         <div class="translation_card_row" *ngIf="t.titleOriginal">
             <div class="content_column content_header">Original Title: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.titleOriginal]">{{t.titleOriginal}}
+            <div class="content_column  link_format" (click)="search(t.titleOriginal)">{{t.titleOriginal}}
             </div>
         </div>
         <div class="translation_card_row" *ngIf="t.translators">
             <div class="content_column content_header">Translators: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.translators]">{{t.translators}}</div>
+            <div class="content_column  link_format" (click)="search(t.translators)">{{t.translators}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.authors">
             <div class="content_column content_header">Authors: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.authors]">{{t.authors}}</div>
+            <div class="content_column  link_format" (click)="search(t.authors)">{{t.authors}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.translatedInto">
             <div class="content_column content_header">Translated Into: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.translatedInto]">{{t.translatedInto}}
+            <div class="content_column  link_format" (click)="search(t.translatedInto)">{{t.translatedInto}}
             </div>
         </div>
         <div class="translation_card_row" *ngIf="t.translatedFrom">
             <div class="content_column content_header">Translated From: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.translatedFrom]">{{t.translatedFrom}}
+            <div class="content_column  link_format" (click)="search(t.translatedFrom)">{{t.translatedFrom}}
             </div>
         </div>
         <div class="translation_card_row" *ngIf="t.editors">
             <div class="content_column content_header">Editors: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.editors]">{{t.editors}}</div>
+            <div class="content_column  link_format" (click)="search(t.editors)">{{t.editors}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.genre">
             <div class="content_column content_header">Genre: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.genre]">{{t.genre}}</div>
+            <div class="content_column  link_format" (click)="search(t.genre)">{{t.genre}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.type">
             <div class="content_column content_header">Type: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.type]">{{t.type}}</div>
+            <div class="content_column  link_format" (click)="search(t.type)">{{t.type}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.singleOrAnthology">
             <div class="content_column content_header">Single/Anthology: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.singleOrAnthology]">
+            <div class="content_column  link_format" (click)="search(t.singleOrAnthology)">
                 {{t.singleOrAnthology}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.publisherOriginal">
             <div class="content_column content_header">Plublisher for Original: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.publisherOriginal]">
+            <div class="content_column  link_format" (click)="search(t.publisherOriginal)">
                 {{t.publisherOriginal}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.publisherTranslation">
             <div class="content_column content_header">Plublisher for Translation: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.publisherTranslation]">
+            <div class="content_column  link_format" (click)="search(t.publisherTranslation)">
                 {{t.publisherTranslation}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.yearOfPublicationOriginal">
             <div class="content_column content_header">Year of Publication for Original: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.yearOfPublicationOriginal]">
+            <div class="content_column  link_format" (click)="search(t.yearOfPublicationOriginal)">
                 {{t.yearOfPublicationOriginal}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.yearOfPublicationTranslation">
             <div class="content_column content_header">Year of Publication for Translation: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.yearOfPublicationTranslation]">
+            <div class="content_column  link_format" (click)="search(t.yearOfPublicationTranslation)">
                 {{t.yearOfPublicationTranslation}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.ebook">
             <div class="content_column content_header">Ebook: </div>
-            <div class="content_column  link_format" [routerLink]="['/results', t.ebook]">{{t.ebook}}</div>
+            <div class="content_column  link_format" (click)="search(t.ebook)">{{t.ebook}}</div>
         </div>
         <div class="translation_card_row" *ngIf="t.isbn">
             <div class="content_column content_header">ISBN: </div>
