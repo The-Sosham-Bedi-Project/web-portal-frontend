@@ -47,7 +47,8 @@
 @media only screen and (max-width: 600px) {
     .project_author_intro_text {
         position: relative;
-        background: rgb(228, 228, 90);
+        opacity: 0.8;
+        background-color: rgb(105, 67, 23);
         padding: 20px;
         margin: 20px 0px;
         display: flex;
@@ -59,7 +60,8 @@
 @media only screen and (min-width: 600px) {
     .project_author_intro_text {
         position: relative;
-        background: rgb(228, 228, 90);
+        opacity: 0.8;
+        background-color: rgb(105, 67, 23);
         padding: 20px;
         margin: 20px 0px;
         display: flex;
@@ -70,7 +72,8 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .project_author_intro_text {
-        background: none;
+        opacity: 0.8;
+        background-color: rgb(105, 67, 23);
         position: absolute;
         transform: translate(-50%, -50%);
         top: 50%;
