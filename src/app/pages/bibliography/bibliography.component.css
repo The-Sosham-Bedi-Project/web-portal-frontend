@@ -43,6 +43,26 @@
     text-align: center;
 }
 
+.page_title {
+    color: white;
+    font-size: 1.5rem;
+    font-family: serif;
+    cursor: pointer;
+    margin-left: 25px;
+    display: flex;
+    text-align: center;
+    opacity: 1;
+}
+
+.page_title:hover {
+    text-decoration: underline;
+}
+
+.page_title:active {
+    text-decoration: underline;
+}
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .project_author_intro_text {

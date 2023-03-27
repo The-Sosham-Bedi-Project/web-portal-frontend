@@ -7,6 +7,7 @@ import { Apollo, gql } from 'apollo-angular';
 export class SearchService {
 
   public translations =[];
+  public searchQuery ="";
 
   constructor(private apollo: Apollo) { }
 
@@ -24,7 +25,22 @@ export class SearchService {
     return input;
   }
 
+  getSearchQueary(searchInput: any) {
+    let input = "";
+    if (searchInput.searchString) {
+      input += ` keyword:"${searchInput.searchString}"`
+    }
+    if (searchInput.translatedFrom) {
+      input += ` original language:"${searchInput.translatedFrom}"`
+    }
+    if (searchInput.translatedInto) {
+      input += ` translated into:"${searchInput.translatedInto}"`
+    }
+    return input;
+  }
+
   search(searchInput: any) {
+    this.searchQuery = this.getSearchQueary(searchInput);
     const input = this.getSearchInput(searchInput);
     if (input !== "") return this.apollo
       .watchQuery({

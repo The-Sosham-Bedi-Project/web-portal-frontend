@@ -1,18 +1,25 @@
 <div class="bibliography_parent">
-    <form id="form" role="search" class="searchbar">
-        <input id="query" name="q" placeholder="Keyword" aria-label="Search through site content"
-            [(ngModel)]="searchString" title="Type a keyword based on what you're searching for: author, source language, translator, year of publication, etc.">
-        <input id="query_from" name="r" placeholder="Translated From" aria-label="Search through site content"
+    <form id="form" role="search" (ngSubmit)="emitSearch()">
+        <label>Translated From: &nbsp;</label>
+        <input id="query_from" name="r" placeholder="Language" aria-label="Search through site content"
             [(ngModel)]="translatedFrom">
-
-        <input id="query_to" name="s" placeholder="Translated Into" aria-label="Search through site content"
+        <span>&nbsp;&nbsp;</span>
+        <label>Translated Into: &nbsp;</label>
+        <input id="query_to" name="s" placeholder="Language" aria-label="Search through site content"
             [(ngModel)]="translatedInto">
-        <button (click)="emitSearch()" class="searchbutton">
+    
+    <p>Type a keyword based on what you're searching for: author, source language, translator, year of publication, etc.
+    </p>
+    <div class="searchbar">
+        <input id="query" class="searchinput" name="q" placeholder="Keyword" aria-label="Search through site content"
+            [(ngModel)]="searchString">
+        <button type="submit" class="searchbutton">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path
                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
         </button>
+        </div>
     </form>
 </div>

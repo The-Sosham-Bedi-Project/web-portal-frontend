@@ -4,7 +4,8 @@ a {
 }
 
 .act_logo {
-    max-width: 360px;
+    max-height: 100px;
+    max-width: fit-content;
 }
 
 .page_title_div {
@@ -39,17 +40,12 @@ a {
     background-color: white;
 }
 
+.desktop {
+    display: none !important;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .mobile {
-        display: block;
-    }
-
-    .desktop {
-        display: none !important;
-    }
-
     .act_logo_div {
         width: fit-content;
     }
@@ -71,20 +67,12 @@ a {
     }
 
     .act_logo {
-        width: 50vw;
+        width: 80vw;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .mobile {
-        display: block;
-    }
-
-    .desktop {
-        display: none !important;
-    }
-
     .act_logo_div {
         width: fit-content;
     }
@@ -107,7 +95,7 @@ a {
     }
 
     .act_logo {
-        width: 50vw;
+        width: 80vw;
     }
 }
 
@@ -116,16 +104,8 @@ a {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .mobile {
-        display: none;
-    }
-
-    .desktop {
-        display: block !important;
-    }
-
     .act_logo_div {
-        width: 30%;
+        width: fit-content;
     }
 
     .page_title {

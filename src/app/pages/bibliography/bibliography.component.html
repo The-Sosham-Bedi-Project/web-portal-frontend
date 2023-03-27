@@ -6,15 +6,15 @@
             Through this project, we aim to document the compelling words of authors from as many languauges as possible;
         especially languages from India.
         </p>
-        <div class="author_intro_button" routerLink="/about"> Read More </div>
+        <div class="author_intro_button "><a class="page_title" href="#fullSearchBar"> Start Browsing </a></div>
     </div>
 </div>
-<div class="bibliography_header">
+<div class="bibliography_header" id="fullSearchBar">
     <span class="bibliography_header_text heading_font">Bibliography</span>
 </div>
 <app-searchbar (search)="search($event)"></app-searchbar>
 <app-bibliography-list *ngIf="translations.length" [translations] = "translations"></app-bibliography-list>
-<app-announcements></app-announcements>
+<!-- <app-announcements></app-announcements> -->
 <!-- <div class="bibliography_header">
     <span class="bibliography_header_text heading_font">Featured Collection</span>
 </div> -->
