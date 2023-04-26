@@ -14,6 +14,13 @@
     font-weight: bold;
 }
 
+.about_subheader_text{
+    padding: 5px;
+    font-size: 30px;
+    color: rgb(108,123,87);
+    font-weight: bold;
+}
+
 .about_parent{
     display: flex; 
     flex-direction: column; 
@@ -25,6 +32,6 @@
     flex-direction: column;
     padding: 15px;
     border-radius: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     border: 1px solid rgb(108,123,87);
 }

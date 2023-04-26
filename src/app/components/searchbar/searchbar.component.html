@@ -1,6 +1,6 @@
 <div class="bibliography_parent">
-    <form id="form" role="search" (ngSubmit)="emitSearch()">
-        <label>Translated From: &nbsp;</label>
+    <form id="form" role="search" (ngSubmit)="emitSearch()" style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; justify-content: center; font-family: 'EB Garamond';">
+        <label>Original Language: &nbsp;</label>
         <input id="query_from" name="r" placeholder="Language" aria-label="Search through site content"
             [(ngModel)]="translatedFrom">
         <span>&nbsp;&nbsp;</span>

@@ -52,11 +52,11 @@
                                     {{t.titleTranslation?t.titleTranslation:t.titleOriginal}}</h1>
                             </div>
                             <div class="content_column" *ngIf="t.titleTranslation">
-                                <div class="content_column_header">Translation Title: </div>
+                                <div class="content_column_header">Title of Translation: </div>
                                 <div class="content_column_value">{{t.titleTranslation}}</div>
                             </div>
                             <div class="content_column" *ngIf="t.translators">
-                                <div class="content_column_header">Translators: </div>
+                                <div class="content_column_header">Translator(s): </div>
                                 <div class="content_column_value">{{t.translators}}</div>
                             </div>
                             <div class="content_column" *ngIf="t.translatedInto">
@@ -69,11 +69,11 @@
                                 <div class="content_column_value">{{t.titleOriginal}}</div>
                             </div>
                             <div class="content_column" *ngIf="t.authors">
-                                <div class="content_column_header">Authors: </div>
+                                <div class="content_column_header">Author(s): </div>
                                 <div class="content_column_value">{{t.authors}}</div>
                             </div>
                             <div class="content_column" *ngIf="t.translatedFrom">
-                                <div class="content_column_header">Translated From: </div>
+                                <div class="content_column_header">Original Language: </div>
                                 <div class="content_column_value">{{t.translatedFrom}}</div>
                             </div>
                         </div>
